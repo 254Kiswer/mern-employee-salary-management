@@ -7,32 +7,33 @@ import Contact from '../../pages/Contact';
 import Login from '../../pages/Login';
 import Dashboard from '../../pages/Dashboard';
 import {
-  FormAddDataJabatan,
-  FormEditDataJabatan,
-  FormAddDataKehadiran,
-  FormEditDataKehadiran,
-  FormAddDataPegawai,
-  FormEditDataPegawai,
-  FormAddDataPotongan,
-  FormEditDataPotongan,
-  PrintPdfLaporanGaji,
-  DetailDataGaji,
-  PrintPdfSlipGaji,
-  PrintPdfLaporanAbsensi,
-  PrintPdfDataGajiPegawai
+  FormAddJobTitleData,
+  FormEditJobTitleData,
+  FormAddAttendanceData,
+  FormEditAttendanceData,
+  FormAddEmployeeData,
+  FormEditEmployeeData,
+  FormAddDeductionData,
+  FormEditDeductionData,
+  PrintPdfSalarySlipReport,
+  DetailSalaryData,
+  PrintPdfSalarySlip,
+  PrintPdfAbsentReport,
+  PrintPdfEmployeeSalaryData,
+  
 } from '../../components';
 import {
-  DataPegawai,
-  DataJabatan,
-  DataKehadiran,
-  DataGaji,
-  LaporanGaji,
-  LaporanAbsensi,
-  SlipGaji,
-  UbahPasswordAdmin,
-  DataGajiPegawai,
-  UbahPasswordPegawai,
-  DataPotongan
+  EmployeeData,
+  JobTitleData,
+  AttendanceData,
+  SalaryData,
+  SalaryReport,
+  AbsentReport,
+  SalarySlip,
+  ChangePasswordAdmin,
+  EmployeeSalaryData,
+  ChangePasswordEmployee,
+  DeductionData
 } from '../../pages'
 
 const AppRoutes = () => {
@@ -40,119 +41,119 @@ const AppRoutes = () => {
 
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/tentang' element={<About />} />
-      <Route path='/kontak' element={<Contact />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/contact' element={<Contact />} />
       <Route path='/login' element={<Login />} />
       <Route path='/dashboard' element={<Dashboard />} />
 
       {/* Route Admin */}
       {/* Master Data Admin */}
       <Route
-        path='/data-pegawai'
-        element={<DataPegawai />}
+        path='/employeeData'
+        element={<EmployeeData />}
       />
       <Route
-        path='/data-pegawai/form-data-pegawai/add'
-        element={<FormAddDataPegawai />}
+        path='/employeeData/form-employee-data/add'
+        element={<FormAddEmployeeData />}
       />
       <Route
-        path='/data-pegawai/form-data-pegawai/edit/:id'
-        element={<FormEditDataPegawai />}
+        path='/employeeData/form-employee-data/edit/:id'
+        element={<FormEditEmployeeData />}
       />
       <Route
-        path='/data-jabatan'
-        element={<DataJabatan />}
+        path='/jobTitleData'
+        element={<JobTitleData />}
       />
       <Route
-        path='/data-jabatan/form-data-jabatan/add'
-        element={<FormAddDataJabatan />}
+        path='/jobTitleData/form-job-title-data/add'
+        element={<FormAddJobTitleData />}
       />
       <Route
-        path='/data-jabatan/form-data-jabatan/edit/:id'
-        element={<FormEditDataJabatan />}
+        path='/jobTitleData/form-job-title-data/edit/:id'
+        element={<FormEditJobTitleData />}
       />
 
       {/* Transaksi Admin */}
       <Route
-        path='/data-kehadiran'
-        element={<DataKehadiran />}
+        path='/attendanceData'
+        element={<AttendanceData />}
       />
       <Route
-        path='/data-kehadiran/form-data-kehadiran/add'
-        element={<FormAddDataKehadiran />}
+        path='/attendanceData/form-attendance-data/add'
+        element={<FormAddAttendanceData />}
       />
       <Route
-        path='/data-kehadiran/form-data-kehadiran/edit/:id'
-        element={<FormEditDataKehadiran />}
+        path='/attendanceData/form-attendance-data/edit/:id'
+        element={<FormEditAttendanceData />}
       />
       <Route
-        path='/data-potongan'
-        element={<DataPotongan />}
+        path='/deductionData'
+        element={<DeductionData />}
       />
       <Route
-        path='/data-potongan/form-data-potongan/add'
-        element={<FormAddDataPotongan />} />
+        path='/deductionData/form-deduction-data/add'
+        element={<FormAddDeductionData />} />
       <Route
-        path='/data-potongan/form-data-potongan/edit/:id'
-        element={<FormEditDataPotongan />} />
+        path='/deductionData/form-deduction-data/edit/:id'
+        element={<FormEditDeductionData />} />
       <Route
-        path='/data-gaji'
-        element={<DataGaji />}
+        path='/salaryData'
+        element={<SalaryData />}
       />
       <Route
-        path='/data-gaji/detail-data-gaji/name/:name'
-        element={<DetailDataGaji />}
+        path='/salaryData/detail-salary-data/name/:name'
+        element={<DetailSalaryData />}
       />
       <Route
-        path='/data-gaji/cetak-gaji/slip-gaji/name/:name'
-        element={<PrintPdfSlipGaji />}
-      />
-
-      {/* Laporan Admin */}
-      <Route
-        path='/laporan/gaji'
-        element={<LaporanGaji />}
-      />
-      <Route
-        path='/laporan/gaji/print-page'
-        element={<PrintPdfLaporanGaji />}
-      />
-      <Route
-        path='/laporan/absensi'
-        element={<LaporanAbsensi />}
-      />
-      <Route
-        path='/laporan/absensi/print-page'
-        element={<PrintPdfLaporanAbsensi />}
-      />
-      <Route
-        path='/laporan/slip-gaji'
-        element={<SlipGaji />}
-      />
-      <Route
-        path='/laporan/slip-gaji/print-page'
-        element={<PrintPdfSlipGaji />}
+        path='/salaryData/print-salary/salary-slip/name/:name'
+        element={<PrintPdfSalarySlip />}
       />
 
-      {/* Pengaturan Admin */}
+      {/*  Admin Report */}
       <Route
-        path='/ubah-password'
-        element={<UbahPasswordAdmin />}
+        path='/report/salary'
+        element={<SalaryReport />}
+      />
+      <Route
+        path='/report/salary/print-page'
+        element={<PrintPdfSalarySlipReport />}
+      />
+      <Route
+        path='/report/absent'
+        element={<AbsentReport />}
+      />
+      <Route
+        path='/report/absent/print-page'
+        element={<PrintPdfAbsentReport />}
+      />
+      <Route
+        path='/report/salary-slip'
+        element={<SalarySlip />}
+      />
+      <Route
+        path='/report/salary-slip/print-page'
+        element={<PrintPdfSalarySlip />}
       />
 
-      {/* Route Pegawai */}
-      {/* Dashboard Data Gaji Pegawai */}
+      {/* Admin Settings */}
       <Route
-        path='/data-gaji-pegawai'
-        element={<DataGajiPegawai />}
+        path='/change-password'
+        element={<changePasswordAdmin />}
+      />
+
+      {/* employee Route  */}
+      {/* Dashboard Employee Salary Data */}
+      <Route
+        path='/employee-salary-data'
+        element={<EmployeeSalaryData />}
       />
       <Route
-        path='/data-gaji-pegawai/print-page'
-        element={<PrintPdfDataGajiPegawai />}
+        path='/employee-salary-data/print-page'
+        element={<PrintPdfEmployeeSalaryData />}
       />
       <Route
-        path='/ubah-password-pegawai'
-        element={<UbahPasswordPegawai />}
+        path='/change-password-employee'
+        element={<changePasswordEmployee />}
       />
 
       {/* Route Not Found 404 */}

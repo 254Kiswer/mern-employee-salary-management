@@ -9,7 +9,7 @@ import { GiCrossMark } from "react-icons/gi";
 import { FaHome } from "react-icons/fa";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
-import LogoSipeka from '../../../assets/images/logo/logo-sipeka.png'
+import NFTLogo from '../../../assets/images/logo/NFT-Logo.png'
 import { ButtonThree, DarkModeSwitcher } from "../../atoms";
 
 export default function Navbar() {
@@ -19,9 +19,9 @@ export default function Navbar() {
     };
 
     const navLinks = [
-        { title: "Beranda", link: "/", icon: <FaHome /> },
-        { title: "Tentang", link: "/tentang", icon: <RiFolderInfoFill /> },
-        { title: "Kontak", link: "/kontak", icon: <RiContactsBook2Fill /> },
+        { title: "Home", link: "/", icon: <FaHome /> },
+        { title: "About", link: "/about", icon: <RiFolderInfoFill /> },
+        { title: "Contact", link: "/contact", icon: <RiContactsBook2Fill /> },
     ];
 
     const activeLink = ({ isActive }) => {
@@ -59,10 +59,10 @@ export default function Navbar() {
                 <div>
                     <Link to="/">
                         <img
-                            src={LogoSipeka}
-                            alt="Logo SiPeKa"
+                            src={NFTLogo}
+                            alt="NFT Logo"
                             className="w-40"
-                            title="Logo SiPeKa"
+                            title="NFT logo"
                         />
                     </Link>
                 </div>
@@ -137,7 +137,7 @@ export default function Navbar() {
                             </ul>
                             <div className="text-center dark:bg-boxdark">
                                 <p className="text-accent dark:text-white">
-                                    &copy; Copyright 2023, PT. Humpus Karbometil Selulosa. All Rights Reserved
+                                    &copy; Copyright 2023, Montotech Solutions Limited. All Rights Reserved
                                 </p>
                             </div>
                         </Drawer>

@@ -1,7 +1,7 @@
 {
   "name": "backend-mern-employee-salary-management",
   "version": "1.0.0",
-  "description": "",
+  "description": "OKE",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -9,22 +9,26 @@
     "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kiswa Ali Seif",
   "license": "ISC",
   "dependencies": {
-    "argon2": "^0.30.3",
+    "argon": "^2.0.21",
+    "argon2": "^0.41.1",
     "connect-session-sequelize": "^7.1.6",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
     "express-fileupload": "^1.4.0",
-    "express-session": "^1.17.3",
+    "express-session": "^1.18.0",
     "moment": "^2.29.4",
     "mysql2": "^3.3.0",
     "nodemon": "^2.0.22",
-    "sequelize": "^6.31.1"
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express-fileupload": "^1.5.1",
+    "@types/express-session": "^1.18.0",
     "eslint": "^8.42.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5"

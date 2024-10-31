@@ -6,23 +6,23 @@ import axios from "axios";
 
 const DefaultDashboard = () => {
     const { user } = useSelector((state) => state.auth);
-    const [dataPegawai, setDataPegawai] = useState(null);
+    const [employeeData, setEmployeeData] = useState(null);
 
     useEffect(() => {
-        const getDataPegawai = async () => {
+        const getEmployeeData = async () => {
             try {
                 const response = await axios.get(
-                    `http://localhost:5000/data_pegawai/name/${user.nama_pegawai}`
+                    `http://localhost:5000/employee_data/name/${user.employeeName}`
                 );
                 const data = response.data;
-                setDataPegawai(data);
+                setEmployeeData(data);
             } catch (error) {
                 console.log(error);
             }
         };
 
-        if (user && user.hak_akses === "pegawai") {
-            getDataPegawai();
+        if (user && user.accessRights === "employee") {
+            getEmployeeData();
         }
     }, [user]);
 
@@ -30,7 +30,7 @@ const DefaultDashboard = () => {
     return (
         <Layout>
             <Breadcrumb pageName='Dashboard' />
-            {user && user.hak_akses === "admin" && (
+            {user && user.accessRights === "admin" && (
                 <div className='grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5'>
                     <CardOne />
                     <CardTwo />
@@ -38,7 +38,7 @@ const DefaultDashboard = () => {
                     <CardFour />
                 </div>
             )}
-            {user && user.hak_akses === "admin" && (
+            {user && user.accessRights === "admin" && (
                 <div className="mt-4 grid grid-cols-12 gap-6 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
                     <div className="col-span-12 sm:col-span-7">
                         <ChartOne />
@@ -48,44 +48,44 @@ const DefaultDashboard = () => {
                     </div>
                 </div>
             )}
-            {user && user.hak_akses === "pegawai" && dataPegawai && (
+            {user && user.accessRights=== "employee" && employeeData && (
                 <>
                     <div className="mt-6">
                         <h2 className="px-4 py-2 text-meta-3 font-medium text-center md:text-left">
-                            Selamat Datang di SiPeKa Anda Login Sebagai Pegawai.
+                            Welcome to MontoTech. You are logged in as an employee.
                         </h2>
                     </div>
                     <div className="py-2 px-4 md:px-6 dark:border-strokedark text-lg">
                         <h3 className="font-medium text-black dark:text-white text-center md:text-left">
-                            Data Pegawai
+                         Employee Data
                         </h3>
                     </div>
                     <div className="flex flex-col md:flex-row rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark mt-2">
                         <div className="md:w-1/3 w-full px-4 py-4 flex justify-center md:justify-start">
                             <img
                                 className="rounded-xl h-80 w-full md:w-80 object-cover"
-                                src={`http://localhost:5000/images/${dataPegawai.photo}`}
+                                src={`http://localhost:5000/images/${employeeData.photo}`}
                                 alt="People"
                             />
                         </div>
                         <div className="md:w-2/3 px-4 md:px-20 py-4 md:py-20">
                             <div className="w-full md:text-lg">
                                 <h2 className="font-medium mb-4 block text-black dark:text-white">
-                                    <span className="inline-block w-32 md:w-40">Nik</span>
-                                    <span className="inline-block w-7">:</span>{dataPegawai.nik}
+                                    <span className="inline-block w-32 md:w-40">Nid</span>
+                                    <span className="inline-block w-7">:</span>{employeeData.nid}
                                 </h2>
                                 <h2 className="font-medium mb-4 block text-black dark:text-white">
-                                    <span className="inline-block w-32 md:w-40">Nama Pegawai</span>
+                                    <span className="inline-block w-32 md:w-40">Employee Name</span>
                                     <span className="inline-block w-7">:</span>{' '}
-                                    <span className="pl-[-10] md:pl-0"></span>{dataPegawai.nama_pegawai}
+                                    <span className="pl-[-10] md:pl-0"></span>{employeeData.employeeName}
                                 </h2>
                                 <h2 className="font-medium mb-4 block text-black dark:text-white">
-                                    <span className="inline-block w-32 md:w-40">Tanggal Masuk</span>
-                                    <span className="inline-block w-7">:</span>{dataPegawai.tanggal_masuk}
+                                    <span className="inline-block w-32 md:w-40">Date of Entry</span>
+                                    <span className="inline-block w-7">:</span>{employeeData.dateOfEntry}
                                 </h2>
                                 <h2 className="font-medium mb-4 block text-black dark:text-white">
-                                    <span className="inline-block w-32 md:w-40">Jabatan</span>
-                                    <span className="inline-block w-7">:</span>{dataPegawai.jabatan}
+                                    <span className="inline-block w-32 md:w-40">Job Title</span>
+                                    <span className="inline-block w-7">:</span>{employeeData.jobTitle}
                                     <span className="pl-[-8] md:pl-0"></span>
                                 </h2>
                             </div>

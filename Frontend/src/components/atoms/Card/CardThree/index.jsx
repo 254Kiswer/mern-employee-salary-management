@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getDataJabatan } from '../../../../config/redux/action';
+import { getJobTitleData } from '../../../../config/redux/action';
 import { FaUserTie } from 'react-icons/fa'
 
 const CardThree = () => {
   const dispatch = useDispatch();
-  const { dataJabatan } = useSelector((state) => state.dataJabatan);
-  const jumlahDataJabatan = dataJabatan.length;
+  const { jobTitleData } = useSelector((state) => state.jobTitleData);
+  const TotalJobTitleData = jobTitleData.length;
 
   useEffect(() => {
-    dispatch(getDataJabatan());
+    dispatch(getJobTitleData());
   }, [dispatch]);
 
   return (
@@ -21,9 +21,9 @@ const CardThree = () => {
       <div className='mt-4 flex items-end justify-between'>
         <div>
           <h4 className='text-title-md font-bold text-black dark:text-white'>
-            {jumlahDataJabatan}
+            {TotalJobTitleData}
           </h4>
-          <span className='text-sm font-medium'>Data Jabatan</span>
+          <span className='text-sm font-medium'>Job Title</span>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import LogoSipeka from '../../../assets/images/logo/logo-sipeka.png'
+import NFTLogo from '../../../assets/images/logo/NFT-Logo.png'
 import { DropdownProfil, DarkModeSwitcher } from '../../../components'
 import { Link } from 'react-router-dom'
 
@@ -50,10 +50,10 @@ const Header = (
 
                     <Link className='block flex-shrink-0 lg:hidden' to='/dashboard'>
                         <img
-                            src={LogoSipeka}
+                            src={NFTLogo}
                             className='w-25'
-                            title='Logo SiPeKa'
-                            alt='Logo SiPeKa'
+                            title='NFT Logo'
+                            alt='NFT Logo'
                         />
                     </Link>
                 </div>

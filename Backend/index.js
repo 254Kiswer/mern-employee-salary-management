@@ -12,14 +12,15 @@ import AuthRoute from './routes/AuthRoute.js';
 
 const app = express();
 
+
 const sessionStore = SequelizeStore(session.Store);
 const store = new sessionStore({
     db: db
 });
 
-/* (async() => {
+ (async() => {
     await db.sync();
-})(); */
+})(); 
 
 dotenv.config();
 
@@ -36,7 +37,7 @@ app.use(session({
 
 app.use(cors ({
     credentials: true,
-    origin: 'http://localhost:5173'
+    origin: 'http://localhost:5000'
 }));
 
 
@@ -49,7 +50,7 @@ app.use(UserRoute);
 app.use(AuthRoute);
 
 // store.sync();
-
-app.listen(process.env.APP_PORT, () => {
+const APP_PORT = process.env.APP_PORT||5000;
+app.listen(APP_PORT, () => {
     console.log('Server up and running...');
 });

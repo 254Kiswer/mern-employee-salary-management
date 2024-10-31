@@ -1,0 +1,38 @@
+######################
+###### Report #######
+######################
+
+
+########### Salary Report ###########
+
+### get All Salary Report Data
+GET http://localhost:5000/report/salary
+
+### get All Salary Report Data By Name
+GET http://localhost:5000/report/salary/name/name
+
+### get All Salary Report Data By Month
+GET http://localhost:5000/report/salary/month/january
+
+### get All Salary Report Data By Year
+GET http://localhost:5000/report/salary/year/2023
+
+
+
+########### Absent Report ###########
+### get All Absent Report Data By Month
+GET http://localhost:5000/report/absent/month/march
+
+### get All Absent Report Data By Year
+GET http://localhost:5000/report/absent/year/2021
+
+
+###########    Salary Slip    ###########
+### get Salary Slip By Name
+GET http://localhost:5000/report/salary_slip/name/caca
+
+### get Salary Slip By Month
+GET http://localhost:5000/report/salary_slip/month/march
+
+### get Salary Slip By Year
+GET http://localhost:5000/report/salary_slip/year/2022

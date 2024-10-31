@@ -1,29 +1,29 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './reducer/authReducer';
-import dataGajiPegawaiPrintReducer from './reducer/dataGajiPegawaiPrintReducer';
-import dataPegawaiReducer from './reducer/dataPegawaiReducer';
-import dataJabatanReducer from './reducer/dataJabatanReducer';
-import dataKehadiranReucer from './reducer/dataKehadiranReducer';
-import dataPotonganReducer from './reducer/dataPotonganReducer';
-import dataGajiReducer from './reducer/dataGajiReducer';
-import laporanAbsensiReducer from './reducer/laporanAbsensiReducer';
-import laporanGajiReducer from './reducer/laporanGajiReducer';
-import slipGajiReducer from './reducer/slipGajiReducer';
-import ubahPasswordReducer from './reducer/ubahPasswordReducer';
+import employeeSalaryDataPrintReducer from './reducer/employeeSalaryDataPrintReducer';
+import employeeDataReducer from './reducer/employeeDataReducer';
+import jobTitleDataReducer from './reducer/jobTitleDataReducer';
+import attendanceDataReucer from './reducer/attendanceDataReducer';
+import deductionDataReducer from './reducer/deductionDataReducer';
+import salaryDataReducer from './reducer/salaryDataReducer';
+import absentReportReducer from './reducer/absentReportReducer';
+import salaryReportReducer from './reducer/salaryReportReducer';
+import salarySlipReducer from './reducer/salarySlipReducer';
+import changePasswordReducer from './reducer/changePasswordReducer';
 
 const store = configureStore({
     reducer: {
         auth: authReducer,
-        dataGajiPegawaiPrint: dataGajiPegawaiPrintReducer,
-        dataPegawai: dataPegawaiReducer,
-        dataJabatan: dataJabatanReducer,
-        dataKehadiran: dataKehadiranReucer,
-        dataPotongan: dataPotonganReducer,
-        dataGaji: dataGajiReducer,
-        laporanAbsensi: laporanAbsensiReducer,
-        laporanGaji: laporanGajiReducer,
-        slipGaji: slipGajiReducer,
-        ubahPassword: ubahPasswordReducer,
+        employeeSalaryDataPrint: employeeSalaryDataPrintReducer,
+        employeeData: employeeDataReducer,
+        jobTitleData: jobTitleDataReducer,
+        attendanceData: attendanceDataReucer,
+        deductionData: deductionDataReducer,
+        salaryData: salaryDataReducer,
+        absentReport: absentReportReducer,
+        salaryReport: salaryReportReducer,
+        salarySlip: salarySlipReducer,
+        changePassword: changePasswordReducer,
     },
 });
 

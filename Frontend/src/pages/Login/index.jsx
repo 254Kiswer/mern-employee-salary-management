@@ -1,5 +1,5 @@
 import React from "react";
-import LogoSipeka from "../../assets/images/logo/logo-sipeka.png";
+import NFTLogo from "../../assets/images/logo/NFT-Logo.png";
 import LoginImg from "../../assets/images/LoginImg/login.svg";
 import { Footer, LoginInput, Navbar } from "../../components";
 
@@ -13,14 +13,14 @@ function Login() {
             <span className="mb-5.5 inline-block ">
               <img
                 className="w-80"
-                src={LogoSipeka}
-                alt="Logo SiPeKa"
-                title="Logo SiPeKa"
+                src={NFTLogo}
+                alt="NFT Logo"
+                title="NFT Logo"
               />
             </span>
             <p className="text-black dark:text-white 2xl:px-20">
-              Sistem Penggajian Karyawan Online
-              <br /> PT. Humpuss Karbometil Selulosa
+              Human Resource Management System
+              <br /> NFT Autoports Freight Terminal Limited.
             </p>
             <img className="mt-15 inline-block" src={LoginImg} alt="Logo" />
           </div>
